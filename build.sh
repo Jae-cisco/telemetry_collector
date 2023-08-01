@@ -22,6 +22,9 @@ export GRAFANA_ADMIN_USER="grafana"
 export GRAFANA_ADMIN_PASSWD="cisco123"
 export INFLUXDB_INIT_TOKEN="MySecretToken"
 
+export GNMI_USER=admin
+export GNMI_PASSWORD=1234Qwer
+
 self=$0
 TELEGRAF_USER="telegraf"
 TELEGRAF_CERT_PATH="$TELEGRAF_CONFIG/cert"
