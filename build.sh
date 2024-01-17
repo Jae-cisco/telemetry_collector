@@ -23,7 +23,9 @@ export GRAFANA_ADMIN_PASSWD="cisco123"
 export INFLUXDB_INIT_TOKEN="MySecretToken"
 
 export GNMI_USER=admin
-export GNMI_PASSWORD=1234Qwer
+export GNMI_PASSWORD=cisco123
+
+export INFLUXDB_INIT_CLI_CONFIG_NAME="cisg"
 
 self=$0
 TELEGRAF_USER="telegraf"
@@ -32,8 +34,8 @@ GNMI_CERT_PASSWD="cisco123"
 pull_image=false # pull required image every time start
 
 # swtiches accept gNMI dial-in
-switches=( "10.70.136.162:50051" \
-           "10.70.136.164:50051" \
+switches=( "10.70.137.106:50051" \
+           "10.70.137.105:50051" \
 )
 
 # user on swtich for authentication, need network-operator role at least
@@ -237,6 +239,7 @@ function setup_influxdb() {
             --username $INFLUXDB_USER\
             --password $INFLUXDB_PASSWD\
             --token $INFLUXDB_INIT_TOKEN\
+            --name $INFLUXDB_INIT_CLI_CONFIG_NAME\
             --retention 2h \
             --force
 
